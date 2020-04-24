@@ -1,0 +1,186 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "username and password as payload",
+            "match": {
+              "location": "io.cucumber.StepDefinationComments.username_and_password_as_payload(java.util.List\u003cjava.util.Map\u003cjava.lang.String, java.lang.String\u003e\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "username",
+                  "password"
+                ]
+              },
+              {
+                "cells": [
+                  "harsh",
+                  "behl"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "request is sent to \"LoginAPI\" by http method \"Post\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"LoginAPI\"",
+                  "offset": 19
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 45
+                }
+              ],
+              "location": "io.cucumber.StepDefinationComments.request_is_sent_to_LoginAPI_by_http_method_Post(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "server sends the repsonse status code as 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 41
+                }
+              ],
+              "location": "io.cucumber.StepDefinationComments.server_sends_the_repsonse_status_code_as(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-04-22T15:54:56.181Z",
+        "line": 10,
+        "name": "Creating the issue in Jira",
+        "description": "",
+        "id": "testing-the-comments-functionality;creating-the-issue-in-jira",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "issueId as path paremter",
+            "match": {
+              "location": "io.cucumber.StepDefinationComments.issueid_as_path_paremter()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "given createComment payload",
+            "match": {
+              "location": "io.cucumber.StepDefinationComments.given_createComment_payload()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "request is sent to \"CreateCommentAPI\" by http method \"Post\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateCommentAPI\"",
+                  "offset": 19
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 53
+                }
+              ],
+              "location": "io.cucumber.StepDefinationComments.request_is_sent_to_LoginAPI_by_http_method_Post(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "server sends the repsonse status code as 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 41
+                }
+              ],
+              "location": "io.cucumber.StepDefinationComments.server_sends_the_repsonse_status_code_as(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "extract the response",
+            "match": {
+              "location": "io.cucumber.StepDefinationComments.extract_the_response()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "extract the commentid from response",
+            "match": {
+              "location": "io.cucumber.StepDefinationComments.extract_the_commentid_from_response()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Testing the Comments functionality",
+    "description": "",
+    "id": "testing-the-comments-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/io/cucumber/Comments.feature",
+    "tags": []
+  }
+]

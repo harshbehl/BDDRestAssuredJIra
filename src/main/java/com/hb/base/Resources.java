@@ -2,7 +2,8 @@ package com.hb.base;
 
 public enum Resources {
 
-	LoginResourcePath("rest/auth/1/session"), CreateComResourcePath("/rest/api/2/issue/{IssueID}/comment"),
+	LoginResourcePath("rest/auth/1/session"), 
+	CreateComResourcePath("/rest/api/2/issue/{issueId}/comment"),
 	UpdateComResourcePath("/rest/api/2/issue/{issueId}/comment/{commentId}"),
 	deleteComResourcePath("/rest/api/2/issue/{issueId}/comment/{commentId}"),
 	uploadAttachmentPath("/rest/api/2/issue/{issueId}/attachments");

@@ -1,0 +1,123 @@
+Request method:	POST
+Request URI:	http://localhost:8080/rest/auth/1/session
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=Application/Json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "harsh.behl",
+    "password": "QAwe@91586"
+}
+HTTP/1.1 200 
+X-AREQUESTID: 1305x228x1
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-ASEN: SEN-L15300896
+Set-Cookie: atlassian.xsrf.token=BGL0-6CX4-ATM3-1VPV_26f03f2de5518b925dff538b6b1f287fd6c4affe_lout; Path=/
+X-AUSERNAME: anonymous
+Set-Cookie: JSESSIONID=DDB2EA8F1AE43E9CAD053CE8AB7282A2; Path=/; HttpOnly
+X-Seraph-LoginReason: OK
+Cache-Control: no-cache, no-store, no-transform
+Content-Encoding: gzip
+Vary: User-Agent
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 24 Apr 2020 16:15:44 GMT
+
+{
+    "session": {
+        "name": "JSESSIONID",
+        "value": "DDB2EA8F1AE43E9CAD053CE8AB7282A2"
+    },
+    "loginInfo": {
+        "loginCount": 75,
+        "previousLoginTime": "2020-04-24T21:34:10.897+0530"
+    }
+}
+Request method:	POST
+Request URI:	http://localhost:8080/rest/api/2/issue/RES-9/comment
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	issueId=RES-9
+Headers:		Accept=*/*
+				Content-Type=Application/Json; charset=UTF-8
+Cookies:		JSESSIONID=DDB2EA8F1AE43E9CAD053CE8AB7282A2
+Multiparts:		<none>
+Body:
+{
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    },
+    "body": "This is comment via BDD Rest Assured Framework"
+}
+HTTP/1.1 201 
+X-AREQUESTID: 1305x229x1
+X-ASESSIONID: g9axrw
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-ASEN: SEN-L15300896
+X-Seraph-LoginReason: OK
+Set-Cookie: atlassian.xsrf.token=BGL0-6CX4-ATM3-1VPV_d18af8a3f8e3a977e9e0e1f735fb65a5a2a99b25_lin; Path=/
+X-AUSERNAME: harsh.behl
+Location: http://localhost:8080/rest/api/2/issue/10008/comment/10302
+Cache-Control: no-cache, no-store, no-transform
+Content-Encoding: gzip
+Vary: User-Agent
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 24 Apr 2020 16:15:44 GMT
+
+{
+    "self": "http://localhost:8080/rest/api/2/issue/10008/comment/10302",
+    "id": "10302",
+    "author": {
+        "self": "http://localhost:8080/rest/api/2/user?username=harsh.behl",
+        "name": "harsh.behl",
+        "key": "JIRAUSER10000",
+        "emailAddress": "harsh.behl92@hotmail.com",
+        "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10339",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10339",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10339",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10339"
+        },
+        "displayName": "Harsh Behl",
+        "active": true,
+        "timeZone": "Asia/Kolkata"
+    },
+    "body": "This is comment via BDD Rest Assured Framework",
+    "updateAuthor": {
+        "self": "http://localhost:8080/rest/api/2/user?username=harsh.behl",
+        "name": "harsh.behl",
+        "key": "JIRAUSER10000",
+        "emailAddress": "harsh.behl92@hotmail.com",
+        "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10339",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10339",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10339",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10339"
+        },
+        "displayName": "Harsh Behl",
+        "active": true,
+        "timeZone": "Asia/Kolkata"
+    },
+    "created": "2020-04-24T21:45:44.575+0530",
+    "updated": "2020-04-24T21:45:44.575+0530",
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    }
+}

@@ -1,6 +1,11 @@
 package com.hb;
 
+import static io.restassured.RestAssured.given;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,17 +13,15 @@ import com.hb.Payload.CreateComChildPojo;
 import com.hb.Payload.CreateComParentPojo;
 import com.hb.Payload.LoginPojo;
 import com.hb.base.CommentSpecBuilder;
+import com.hb.base.Utilities;
 
-
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.Assertions.*;
-
 
 public class StepDefinationComments extends CommentSpecBuilder {
 	LoginPojo logPayLoad = null;
@@ -26,55 +29,89 @@ public class StepDefinationComments extends CommentSpecBuilder {
 	CreateComParentPojo createParentLoad = null;
 	RequestSpecification reqSpec = null;
 	ResponseSpecification resSpec = null;
-	CommentSpecBuilder spec = null;
+	static CommentSpecBuilder spec = null;
 	Response response = null;
+	static String commentId = null;
+	HashMap<String, String> pathParam = null;
+	static File file = null;
 
-	@Given("username and password as payload")
-	public void username_and_password_as_payload(List<Map<String, String>> data) {
+	@Given("Login payload sent to {string}")
+	public void login_payload_sent_to(String ApiResource, List<Map<String, String>> data) throws FileNotFoundException {
 		logPayLoad = new LoginPojo();
 		logPayLoad.setUsername(data.get(0).get("username"));
 		logPayLoad.setPassword(data.get(0).get("password"));
-
+		spec = new CommentSpecBuilder();
+		reqSpec = spec.generateRequest(ApiResource).body(logPayLoad);
 	}
 
-	@When("request is sent to {string} by http method {string}")
-	public void request_is_sent_to_LoginAPI_by_http_method_Post(String apiName, String httpMethod) {
-		spec = new CommentSpecBuilder();
-		try {
-			reqSpec = spec.generateRequest(apiName);
-			if (httpMethod.equalsIgnoreCase("Post"))
-				response = given().spec(reqSpec).body(logPayLoad).when().post().then().extract().response();
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+	@When("http method is {string}")
+	public void http_method_is(String httpMethod) {
+		if (httpMethod.equalsIgnoreCase("Post"))
+			response = given().spec(reqSpec).when().post();
+		else if (httpMethod.equalsIgnoreCase("Put"))
+			response = given().spec(reqSpec).when().put();
+		else
+			response = given().spec(reqSpec).when().delete();
 	}
 
 	@Then("server sends the repsonse status code as {int}")
 	public void server_sends_the_repsonse_status_code_as(int statusCode) {
-	   assertThat(response.getStatusCode()).isEqualTo(statusCode);
-	   }
-
-	/*@Given("issueId as path paremter")
-	public void issueid_as_path_paremter() {
-		System.out.println(System.getProperty("user.dir"));
+		assertThat(response.getStatusCode()).isEqualTo(statusCode);
 	}
 
-	@Given("given createComment payload")
-	public void given_createComment_payload() {
+	@Given("issueId as path parameter")
+	public void as_path_paremter(List<String> data) {
+		pathParam = new HashMap<String, String>();
+		pathParam.put("issueId", data.get(0));
 
 	}
 
-	@Then("extract the response")
-	public void extract_the_response() {
+	@And("createComment payload sent to {string}")
+	public void createcomment_payload_sent_to(String ApiResource) throws FileNotFoundException {
+		createChildLoad = new CreateComChildPojo();
+		createChildLoad.setType("role");
+		createChildLoad.setValue("Administrators");
+		createParentLoad = new CreateComParentPojo();
+		createParentLoad.setVisble(createChildLoad);
+		createParentLoad.setBody("This is comment via BDD Rest Assured Framework");
+		System.out.println(Utilities.filter.getSessionId());
+		reqSpec = spec.generateRequest(ApiResource, pathParam).body(createParentLoad);
+	}
+
+	@Then("extract the {string} from response")
+	public void extract_the_from_response(String key) {
+		commentId = Utilities.getJsonPath(response.asString(), "id");
 
 	}
 
-	@Then("extract the commentid from response")
-	public void extract_the_commentid_from_response() {
+	@Given("issueId and commentId as path parameter")
+	public void issueid_and_commentId_as_path_parameter(List<String> data) {
+		pathParam = new HashMap<String, String>();
+		pathParam.put("issueId", data.get(0));
+		pathParam.put("commentId", commentId);
+	}
 
-	}*/
+	@Given("updateComment payload is sent to {string}")
+	public void updatecomment_payload_is_sent_to(String ApiResource) throws FileNotFoundException {
+
+		createChildLoad = new CreateComChildPojo();
+		createChildLoad.setType("role");
+		createChildLoad.setValue("Administrators");
+		createParentLoad = new CreateComParentPojo();
+		createParentLoad.setVisble(createChildLoad);
+		createParentLoad.setBody("This is comment updated comment for BDD Rest Assured Framework");
+		reqSpec = spec.generateRequest(ApiResource, pathParam).body(createParentLoad);
+	}
+
+	@Given("with required headers request is sent to {string}")
+	public void with_required_headers_request_is_sent_to(String ApiResource) throws FileNotFoundException {
+		reqSpec = spec.generateRequest(ApiResource, pathParam, file).header(Utilities.multiHeadName,
+				Utilities.multiHeadValue);
+	}
+
+	@And("file to upload")
+	public void file_to_upload() {
+		file = new File("pom.xml");
+	}
 
 }

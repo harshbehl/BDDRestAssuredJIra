@@ -1,0 +1,265 @@
+Request method:	POST
+Request URI:	http://localhost:8080/rest/auth/1/session
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=Application/Json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "harsh.behl",
+    "password": "QAwe@91586"
+}
+HTTP/1.1 200 
+X-AREQUESTID: 1315x232x1
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-ASEN: SEN-L15300896
+Set-Cookie: atlassian.xsrf.token=BGL0-6CX4-ATM3-1VPV_a3b91d56fad236888f2cd758b53a02be700c689e_lout; Path=/
+X-AUSERNAME: anonymous
+Set-Cookie: JSESSIONID=C27D0E45F3CBE5E0FDCB7062AF59EF7D; Path=/; HttpOnly
+X-Seraph-LoginReason: OK
+Cache-Control: no-cache, no-store, no-transform
+Content-Encoding: gzip
+Vary: User-Agent
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 24 Apr 2020 16:25:39 GMT
+
+{
+    "session": {
+        "name": "JSESSIONID",
+        "value": "C27D0E45F3CBE5E0FDCB7062AF59EF7D"
+    },
+    "loginInfo": {
+        "loginCount": 77,
+        "previousLoginTime": "2020-04-24T21:47:35.710+0530"
+    }
+}
+Request method:	POST
+Request URI:	http://localhost:8080/rest/api/2/issue/RES-9/comment
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	issueId=RES-9
+Headers:		Accept=*/*
+				Content-Type=Application/Json; charset=UTF-8
+Cookies:		JSESSIONID=C27D0E45F3CBE5E0FDCB7062AF59EF7D
+Multiparts:		<none>
+Body:
+{
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    },
+    "body": "This is comment via BDD Rest Assured Framework"
+}
+HTTP/1.1 201 
+X-AREQUESTID: 1315x233x1
+X-ASESSIONID: 1vqpwqd
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-ASEN: SEN-L15300896
+X-Seraph-LoginReason: OK
+Set-Cookie: atlassian.xsrf.token=BGL0-6CX4-ATM3-1VPV_a3b557a843a7d02914666d4326a25685dbfac992_lin; Path=/
+X-AUSERNAME: harsh.behl
+Location: http://localhost:8080/rest/api/2/issue/10008/comment/10304
+Cache-Control: no-cache, no-store, no-transform
+Content-Encoding: gzip
+Vary: User-Agent
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 24 Apr 2020 16:25:39 GMT
+
+{
+    "self": "http://localhost:8080/rest/api/2/issue/10008/comment/10304",
+    "id": "10304",
+    "author": {
+        "self": "http://localhost:8080/rest/api/2/user?username=harsh.behl",
+        "name": "harsh.behl",
+        "key": "JIRAUSER10000",
+        "emailAddress": "harsh.behl92@hotmail.com",
+        "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10339",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10339",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10339",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10339"
+        },
+        "displayName": "Harsh Behl",
+        "active": true,
+        "timeZone": "Asia/Kolkata"
+    },
+    "body": "This is comment via BDD Rest Assured Framework",
+    "updateAuthor": {
+        "self": "http://localhost:8080/rest/api/2/user?username=harsh.behl",
+        "name": "harsh.behl",
+        "key": "JIRAUSER10000",
+        "emailAddress": "harsh.behl92@hotmail.com",
+        "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10339",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10339",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10339",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10339"
+        },
+        "displayName": "Harsh Behl",
+        "active": true,
+        "timeZone": "Asia/Kolkata"
+    },
+    "created": "2020-04-24T21:55:39.635+0530",
+    "updated": "2020-04-24T21:55:39.635+0530",
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    }
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/rest/api/2/issue/RES-9/comment/10304
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	issueId=RES-9
+				commentId=10304
+Headers:		Accept=*/*
+				Content-Type=Application/Json; charset=UTF-8
+Cookies:		JSESSIONID=C27D0E45F3CBE5E0FDCB7062AF59EF7D
+Multiparts:		<none>
+Body:
+{
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    },
+    "body": "This is comment updated comment for BDD Rest Assured Framework"
+}
+HTTP/1.1 200 
+X-AREQUESTID: 1315x234x1
+X-ASESSIONID: 1vqpwqd
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-ASEN: SEN-L15300896
+X-Seraph-LoginReason: OK
+Set-Cookie: atlassian.xsrf.token=BGL0-6CX4-ATM3-1VPV_f66092a69503d3355280b3cf23e19ff4c15acb6e_lin; Path=/
+X-AUSERNAME: harsh.behl
+Location: http://localhost:8080/rest/api/2/issue/10008/comment/10304
+Cache-Control: no-cache, no-store, no-transform
+Content-Encoding: gzip
+Vary: User-Agent
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 24 Apr 2020 16:25:39 GMT
+
+{
+    "self": "http://localhost:8080/rest/api/2/issue/10008/comment/10304",
+    "id": "10304",
+    "author": {
+        "self": "http://localhost:8080/rest/api/2/user?username=harsh.behl",
+        "name": "harsh.behl",
+        "key": "JIRAUSER10000",
+        "emailAddress": "harsh.behl92@hotmail.com",
+        "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10339",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10339",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10339",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10339"
+        },
+        "displayName": "Harsh Behl",
+        "active": true,
+        "timeZone": "Asia/Kolkata"
+    },
+    "body": "This is comment updated comment for BDD Rest Assured Framework",
+    "updateAuthor": {
+        "self": "http://localhost:8080/rest/api/2/user?username=harsh.behl",
+        "name": "harsh.behl",
+        "key": "JIRAUSER10000",
+        "emailAddress": "harsh.behl92@hotmail.com",
+        "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10339",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10339",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10339",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10339"
+        },
+        "displayName": "Harsh Behl",
+        "active": true,
+        "timeZone": "Asia/Kolkata"
+    },
+    "created": "2020-04-24T21:55:39.635+0530",
+    "updated": "2020-04-24T21:55:40.241+0530",
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    }
+}
+Request method:	POST
+Request URI:	http://localhost:8080/rest/api/2/issue/RES-9/attachments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	issueId=RES-9
+Headers:		X-Atlassian-Token=no-check
+				X-Atlassian-Token=no-check
+				Accept=*/*
+				Content-Type=multipart/form-data
+Cookies:		JSESSIONID=C27D0E45F3CBE5E0FDCB7062AF59EF7D
+Multiparts:		------------
+				Content-Disposition: form-data; name = file; filename = pom.xml
+				Content-Type: application/octet-stream
+
+				pom.xml
+Body:			<none>
+HTTP/1.1 200 
+X-AREQUESTID: 1315x235x1
+X-ASESSIONID: 1vqpwqd
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-ASEN: SEN-L15300896
+X-Seraph-LoginReason: OK
+Set-Cookie: atlassian.xsrf.token=BGL0-6CX4-ATM3-1VPV_30b10ad24c188c6e37be06a3c97b2167e511b375_lin; Path=/
+X-AUSERNAME: harsh.behl
+Cache-Control: no-cache, no-store, no-transform
+Content-Encoding: gzip
+Vary: User-Agent
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 24 Apr 2020 16:25:40 GMT
+
+[
+    {
+        "self": "http://localhost:8080/rest/api/2/attachment/10300",
+        "id": "10300",
+        "filename": "pom.xml",
+        "author": {
+            "self": "http://localhost:8080/rest/api/2/user?username=harsh.behl",
+            "name": "harsh.behl",
+            "key": "JIRAUSER10000",
+            "emailAddress": "harsh.behl92@hotmail.com",
+            "avatarUrls": {
+                "48x48": "http://localhost:8080/secure/useravatar?avatarId=10339",
+                "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10339",
+                "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10339",
+                "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10339"
+            },
+            "displayName": "Harsh Behl",
+            "active": true,
+            "timeZone": "Asia/Kolkata"
+        },
+        "created": "2020-04-24T21:55:40.532+0530",
+        "size": 2661,
+        "mimeType": "application/xml",
+        "content": "http://localhost:8080/secure/attachment/10300/pom.xml"
+    }
+]

@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-
+//Git Polling test
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src/test/resources" }, glue = {
 		"" }, monochrome = true, strict = true, plugin = { "html:target/reports/html",
